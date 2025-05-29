@@ -36,17 +36,17 @@ def run_ml_app():
     st.markdown(design, unsafe_allow_html=True)
     
     #membuat form
-    left,right=st.colums((2,2))
+    left, right = st.columns((2,2))
     gender = left.selectbox('Gender',('Male','Female'))
-    married = right.selectbox('Married'('Yes','No'))
+    married = right.selectbox('Married',('Yes','No'))
     dependent =left.selectbox('Dependent',(0,1,2,3))
     education = right.selectbox('Education',('Graduate','Not Graduate'))
-    self_employed = left.selectbox('Self Employed',('Yes','No'))
+    self_employed = left.selectbox('Self-Employed',('Yes','No'))
     applicant_income =right.number_input('Applicant Income')
     coApplicant_income=left.number_input('Co-Applicant Income')
     loan_amount =right.number_input('Loan Amount')
-    loan_amount_term =left.number_input('Loan Amount Term'
-                                        min_value=10, max_value=360)
+    loan_amount_term =left.number_input(label='Loan Amount Term',
+                                         min_value=10, max_value=360)
     credit_history=right.selectbox('Credit History',(0.0,1.0))
     property_area=st.selectbox("Property Area",("Rural","Semiurban","Urban"))
     button=st.button("Predict")
